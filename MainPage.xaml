@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DegreePlan.MainPage"
+             Title="Home Page | Terms">
+
+    <ScrollView>
+        <StackLayout Orientation="Vertical">
+            <Entry x:Name="termNameEntry" Placeholder="Enter term name" Margin="10" />
+            <StackLayout Orientation="Horizontal" Spacing="5" Margin="10">
+                <DatePicker x:Name="startDatePicker" />
+                <Label VerticalTextAlignment="Center" Text=":"/>
+                <DatePicker x:Name="endDatePicker" />
+            </StackLayout>
+            <Button Text="Add Term" Clicked="AddTerm_Clicked" Margin="10"/>
+            <Button Text="Edit Term" Clicked="EditTerm_Clicked" Margin="10"/>
+            <Button Text="Delete Term" Clicked="DeleteTerm_Clicked" Margin="10"/>
+            <Button Text="View Term Details" Clicked="ViewTermDetails_Clicked" Margin="10"/>
+            <ListView x:Name="termListView" Margin="10" SeparatorVisibility="Default" RowHeight="70">
+                <ListView.ItemTemplate >
+                    <DataTemplate>
+                        <TextCell TextColor="CadetBlue" Text="{Binding Name}" Detail="{Binding DateRange}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

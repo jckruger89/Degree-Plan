@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DegreePlan.TermDetails"
+             Title="Term Details | Courses">
+
+    <ScrollView>
+        <VerticalStackLayout>
+            <Label x:Name="TermNameLabel" FontSize="18" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+            <Button Text="Add Course" Clicked="Add_Clicked" Margin="10" Grid.Row="1"/>
+            <Button Text="Edit Course" Clicked="Edit_Clicked" Margin="10" Grid.Row="1" />
+            <Button Text="Delete Course" Clicked="Delete_Clicked" Margin="10" Grid.Row="1" />
+            <Button Text="Course Details" Clicked="CourseDetails_Clicked" Margin="10" />
+            <Button Text="Home" Clicked="Home_Clicked" Margin="10" Grid.Row="1" />
+
+            <ListView x:Name="courseListView" Margin="10" SeparatorVisibility="Default" RowHeight="70" >
+                <ListView.ItemTemplate >
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding Name}" TextColor="CadetBlue" FontAttributes="Bold" />
+                                <Label Text="{Binding DateRange}" TextColor="Purple" />
+                                <Label Text="{Binding Status}" TextColor="Green"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

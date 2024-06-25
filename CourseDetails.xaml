@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DegreePlan.CourseDetails"
+             Title="Course Details">
+
+    <ScrollView>
+        <VerticalStackLayout>
+            <Label Text="{Binding Name}" FontSize="20" Margin="10,5,0,0" TextColor="CadetBlue" FontAttributes="Bold"/>
+            <HorizontalStackLayout>
+                <Label Text="{Binding DateRange}" FontSize="20" Margin="10" TextColor="Purple" VerticalTextAlignment="Center"/>
+                <Label Text="Notify" Margin="0, 10, 0, 10" VerticalOptions="Center" TextColor="Green"/>
+                <CheckBox IsEnabled="False" IsChecked="{Binding HasCourseNotify}" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Instructor: " VerticalOptions="Center" Margin="10,5,5,5" TextColor="CadetBlue"/>
+                <Label Text="{Binding InstructorName}" VerticalOptions="Center" TextColor="Purple"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Instructor Email: " VerticalOptions="Center" Margin="10,5,5,5" TextColor="CadetBlue"/>
+                <Label Text="{Binding InstructorEmail}" VerticalOptions="Center" TextColor="Purple"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Instructor Phone: " VerticalOptions="Center" Margin="10,5,5,5" TextColor="CadetBlue"/>
+                <Label Text="{Binding InstructorPhone}" VerticalOptions="Center" TextColor="Purple"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Status:" VerticalOptions="Center" Margin="10" TextColor="CadetBlue"/>
+                <Label Text="{Binding Status}" FontSize="14" VerticalOptions="Center" TextColor="Green" FontAttributes="Bold"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout>
+                <CheckBox IsEnabled="False" IsChecked="{Binding HasObjectiveAssessment}" />
+                <Label Text="Objective Assessment:" VerticalOptions="Center" Margin="0,5,0,5" TextColor="CadetBlue" FontAttributes="Bold"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Name: " VerticalOptions="Center" Margin="10,5,5,5" TextColor="CadetBlue"/>
+                <Label Text="{Binding ObjectiveName}" VerticalOptions="Center" TextColor="Purple" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="{Binding ObjectiveAssessmentDateRange}" Margin="10" TextColor="Purple"/>
+                <Label Text="Notify" Margin="0, 10, 0, 10" VerticalOptions="Center" TextColor="Green"/>
+                <CheckBox IsEnabled="False" IsChecked="{Binding HasObjectiveNotify}" />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout>
+                <CheckBox IsEnabled="False" IsChecked="{Binding HasPerformanceAssessment}" Margin="0,20,0,0"/>
+                <Label Text="Performance Assessment:" VerticalOptions="Center" Margin="0, 25, 0, 5" TextColor="CadetBlue" FontAttributes="Bold"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Name: " VerticalOptions="Center" Margin="10,5,5,5" TextColor="CadetBlue"/>
+                <Label Text="{Binding PerformanceName}" VerticalOptions="Center" TextColor="purple" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="{Binding PerformanceAssessmentDateRange}" Margin="10" TextColor="Purple"/>
+                <Label Text="Notify" Margin="0, 10, 0, 10" VerticalOptions="Center" TextColor="Green"/>
+                <CheckBox IsEnabled="False" IsChecked="{Binding HasPerformanceNotify}" />
+            </HorizontalStackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="75"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="250"/>
+                    <ColumnDefinition Width="115"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Text="{Binding Notes}" Margin="10" VerticalOptions="Center" />
+                <Button Grid.Column="1" Grid.Row="1"  Text="Share" Clicked="Share_Clicked" Margin="15" />
+            </Grid>
+            <Button Text="Back" Clicked="Back_Clicked" Margin="10, 20, 10, 10" />
+            <Button Text="Edit Course" Clicked="EditCourse_Clicked" Margin="10" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
